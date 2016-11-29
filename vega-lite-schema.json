@@ -60,6 +60,16 @@
                     "$ref": "#/definitions/Interpolate",
                     "description": "The line interpolation method to use for line and area marks. One of the following:\n\n- `\"linear\"`: piecewise linear segments, as in a polyline.\n\n- `\"linear-closed\"`: close the linear segments to form a polygon.\n\n- `\"step\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"step-before\"`: alternate between vertical and horizontal segments, as in a step function.\n\n- `\"step-after\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"basis\"`: a B-spline, with control point duplication on the ends.\n\n- `\"basis-open\"`: an open B-spline; may not intersect the start or end.\n\n- `\"basis-closed\"`: a closed B-spline, as in a loop.\n\n- `\"cardinal\"`: a Cardinal spline, with control point duplication on the ends.\n\n- `\"cardinal-open\"`: an open Cardinal spline; may not intersect the start or end, but will intersect other control points.\n\n- `\"cardinal-closed\"`: a closed Cardinal spline, as in a loop.\n\n- `\"bundle\"`: equivalent to basis, except the tension parameter is used to straighten the spline.\n\n- `\"monotone\"`: cubic interpolation that preserves monotonicity in y."
                 },
+                "maxStrokeWidth": {
+                    "description": "Default max strokeWidth for strokeWidth  (or rule/line's size) scale.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "minStrokeWidth": {
+                    "description": "Default minimum strokeWidth for strokeWidth (or rule/line's size) scale with zero=false.",
+                    "minimum": 0,
+                    "type": "number"
+                },
                 "opacity": {
                     "maximum": 1,
                     "minimum": 0,
@@ -524,6 +534,26 @@
                 "interpolate": {
                     "$ref": "#/definitions/Interpolate",
                     "description": "The line interpolation method to use for line and area marks. One of the following:\n\n- `\"linear\"`: piecewise linear segments, as in a polyline.\n\n- `\"linear-closed\"`: close the linear segments to form a polygon.\n\n- `\"step\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"step-before\"`: alternate between vertical and horizontal segments, as in a step function.\n\n- `\"step-after\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"basis\"`: a B-spline, with control point duplication on the ends.\n\n- `\"basis-open\"`: an open B-spline; may not intersect the start or end.\n\n- `\"basis-closed\"`: a closed B-spline, as in a loop.\n\n- `\"cardinal\"`: a Cardinal spline, with control point duplication on the ends.\n\n- `\"cardinal-open\"`: an open Cardinal spline; may not intersect the start or end, but will intersect other control points.\n\n- `\"cardinal-closed\"`: a closed Cardinal spline, as in a loop.\n\n- `\"bundle\"`: equivalent to basis, except the tension parameter is used to straighten the spline.\n\n- `\"monotone\"`: cubic interpolation that preserves monotonicity in y."
+                },
+                "maxBandSize": {
+                    "description": "The default max value for mapping quantitative fields to bar's size/bandSize.\n\nIf undefined (default), we will use bandSize - 1.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "maxStrokeWidth": {
+                    "description": "Default max strokeWidth for strokeWidth  (or rule/line's size) scale.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "minBandSize": {
+                    "description": "The default min value for mapping quantitative fields to bar's size/bandSize scale with zero=false\n\nIf undefined (default), we will use the `continuousBandSize` value.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "minStrokeWidth": {
+                    "description": "Default minimum strokeWidth for strokeWidth (or rule/line's size) scale with zero=false.",
+                    "minimum": 0,
+                    "type": "number"
                 },
                 "opacity": {
                     "maximum": 1,
@@ -1588,6 +1618,16 @@
                     "$ref": "#/definitions/Interpolate",
                     "description": "The line interpolation method to use for line and area marks. One of the following:\n\n- `\"linear\"`: piecewise linear segments, as in a polyline.\n\n- `\"linear-closed\"`: close the linear segments to form a polygon.\n\n- `\"step\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"step-before\"`: alternate between vertical and horizontal segments, as in a step function.\n\n- `\"step-after\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"basis\"`: a B-spline, with control point duplication on the ends.\n\n- `\"basis-open\"`: an open B-spline; may not intersect the start or end.\n\n- `\"basis-closed\"`: a closed B-spline, as in a loop.\n\n- `\"cardinal\"`: a Cardinal spline, with control point duplication on the ends.\n\n- `\"cardinal-open\"`: an open Cardinal spline; may not intersect the start or end, but will intersect other control points.\n\n- `\"cardinal-closed\"`: a closed Cardinal spline, as in a loop.\n\n- `\"bundle\"`: equivalent to basis, except the tension parameter is used to straighten the spline.\n\n- `\"monotone\"`: cubic interpolation that preserves monotonicity in y."
                 },
+                "maxStrokeWidth": {
+                    "description": "Default max strokeWidth for strokeWidth  (or rule/line's size) scale.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "minStrokeWidth": {
+                    "description": "Default minimum strokeWidth for strokeWidth (or rule/line's size) scale with zero=false.",
+                    "minimum": 0,
+                    "type": "number"
+                },
                 "opacity": {
                     "maximum": 1,
                     "minimum": 0,
@@ -1671,6 +1711,16 @@
                 "interpolate": {
                     "$ref": "#/definitions/Interpolate",
                     "description": "The line interpolation method to use for line and area marks. One of the following:\n\n- `\"linear\"`: piecewise linear segments, as in a polyline.\n\n- `\"linear-closed\"`: close the linear segments to form a polygon.\n\n- `\"step\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"step-before\"`: alternate between vertical and horizontal segments, as in a step function.\n\n- `\"step-after\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"basis\"`: a B-spline, with control point duplication on the ends.\n\n- `\"basis-open\"`: an open B-spline; may not intersect the start or end.\n\n- `\"basis-closed\"`: a closed B-spline, as in a loop.\n\n- `\"cardinal\"`: a Cardinal spline, with control point duplication on the ends.\n\n- `\"cardinal-open\"`: an open Cardinal spline; may not intersect the start or end, but will intersect other control points.\n\n- `\"cardinal-closed\"`: a closed Cardinal spline, as in a loop.\n\n- `\"bundle\"`: equivalent to basis, except the tension parameter is used to straighten the spline.\n\n- `\"monotone\"`: cubic interpolation that preserves monotonicity in y."
+                },
+                "maxStrokeWidth": {
+                    "description": "Default max strokeWidth for strokeWidth  (or rule/line's size) scale.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "minStrokeWidth": {
+                    "description": "Default minimum strokeWidth for strokeWidth (or rule/line's size) scale with zero=false.",
+                    "minimum": 0,
+                    "type": "number"
                 },
                 "opacity": {
                     "maximum": 1,
@@ -1850,6 +1900,26 @@
                     "$ref": "#/definitions/Interpolate",
                     "description": "The line interpolation method to use for line and area marks. One of the following:\n\n- `\"linear\"`: piecewise linear segments, as in a polyline.\n\n- `\"linear-closed\"`: close the linear segments to form a polygon.\n\n- `\"step\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"step-before\"`: alternate between vertical and horizontal segments, as in a step function.\n\n- `\"step-after\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"basis\"`: a B-spline, with control point duplication on the ends.\n\n- `\"basis-open\"`: an open B-spline; may not intersect the start or end.\n\n- `\"basis-closed\"`: a closed B-spline, as in a loop.\n\n- `\"cardinal\"`: a Cardinal spline, with control point duplication on the ends.\n\n- `\"cardinal-open\"`: an open Cardinal spline; may not intersect the start or end, but will intersect other control points.\n\n- `\"cardinal-closed\"`: a closed Cardinal spline, as in a loop.\n\n- `\"bundle\"`: equivalent to basis, except the tension parameter is used to straighten the spline.\n\n- `\"monotone\"`: cubic interpolation that preserves monotonicity in y."
                 },
+                "maxSize": {
+                    "description": "Default max value for point size scale.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "maxStrokeWidth": {
+                    "description": "Default max strokeWidth for strokeWidth  (or rule/line's size) scale.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "minSize": {
+                    "description": "Default minimum value for point size scale with zero=false.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "minStrokeWidth": {
+                    "description": "Default minimum strokeWidth for strokeWidth (or rule/line's size) scale with zero=false.",
+                    "minimum": 0,
+                    "type": "number"
+                },
                 "opacity": {
                     "maximum": 1,
                     "minimum": 0,
@@ -1876,7 +1946,29 @@
                             "type": "string"
                         }
                     ],
-                    "description": "The symbol shape to use. One of circle (default), square, cross, diamond, triangle-up, or triangle-down, or a custom SVG path."
+                    "description": "The default symbol shape to use. One of: circle (default), square, cross, diamond, triangle-up, or triangle-down, or a custom SVG path."
+                },
+                "shapes": {
+                    "description": "The default collection of symbol shapes for mapping nominal fields to shapes of point marks (i.e., range of a `shape` scale).\n\nEach value should be one of: circle (default), square, cross, diamond, triangle-up, or triangle-down, or a custom SVG path.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "enum": [
+                                    "circle",
+                                    "cross",
+                                    "diamond",
+                                    "square",
+                                    "triangle-down",
+                                    "triangle-up"
+                                ],
+                                "type": "string"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "type": "array"
                 },
                 "size": {
                     "description": "The pixel area each the point/circle/square.\n\nFor example: in the case of circles, the radius is determined in part by the square root of the size value.",
@@ -2047,6 +2139,16 @@
                     "$ref": "#/definitions/Interpolate",
                     "description": "The line interpolation method to use for line and area marks. One of the following:\n\n- `\"linear\"`: piecewise linear segments, as in a polyline.\n\n- `\"linear-closed\"`: close the linear segments to form a polygon.\n\n- `\"step\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"step-before\"`: alternate between vertical and horizontal segments, as in a step function.\n\n- `\"step-after\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"basis\"`: a B-spline, with control point duplication on the ends.\n\n- `\"basis-open\"`: an open B-spline; may not intersect the start or end.\n\n- `\"basis-closed\"`: a closed B-spline, as in a loop.\n\n- `\"cardinal\"`: a Cardinal spline, with control point duplication on the ends.\n\n- `\"cardinal-open\"`: an open Cardinal spline; may not intersect the start or end, but will intersect other control points.\n\n- `\"cardinal-closed\"`: a closed Cardinal spline, as in a loop.\n\n- `\"bundle\"`: equivalent to basis, except the tension parameter is used to straighten the spline.\n\n- `\"monotone\"`: cubic interpolation that preserves monotonicity in y."
                 },
+                "maxStrokeWidth": {
+                    "description": "Default max strokeWidth for strokeWidth  (or rule/line's size) scale.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "minStrokeWidth": {
+                    "description": "Default minimum strokeWidth for strokeWidth (or rule/line's size) scale with zero=false.",
+                    "minimum": 0,
+                    "type": "number"
+                },
                 "opacity": {
                     "maximum": 1,
                     "minimum": 0,
@@ -2114,6 +2216,16 @@
                 "interpolate": {
                     "$ref": "#/definitions/Interpolate",
                     "description": "The line interpolation method to use for line and area marks. One of the following:\n\n- `\"linear\"`: piecewise linear segments, as in a polyline.\n\n- `\"linear-closed\"`: close the linear segments to form a polygon.\n\n- `\"step\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"step-before\"`: alternate between vertical and horizontal segments, as in a step function.\n\n- `\"step-after\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"basis\"`: a B-spline, with control point duplication on the ends.\n\n- `\"basis-open\"`: an open B-spline; may not intersect the start or end.\n\n- `\"basis-closed\"`: a closed B-spline, as in a loop.\n\n- `\"cardinal\"`: a Cardinal spline, with control point duplication on the ends.\n\n- `\"cardinal-open\"`: an open Cardinal spline; may not intersect the start or end, but will intersect other control points.\n\n- `\"cardinal-closed\"`: a closed Cardinal spline, as in a loop.\n\n- `\"bundle\"`: equivalent to basis, except the tension parameter is used to straighten the spline.\n\n- `\"monotone\"`: cubic interpolation that preserves monotonicity in y."
+                },
+                "maxStrokeWidth": {
+                    "description": "Default max strokeWidth for strokeWidth  (or rule/line's size) scale.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "minStrokeWidth": {
+                    "description": "Default minimum strokeWidth for strokeWidth (or rule/line's size) scale with zero=false.",
+                    "minimum": 0,
+                    "type": "number"
                 },
                 "opacity": {
                     "maximum": 1,
@@ -2296,61 +2408,11 @@
                     "minimum": 0,
                     "type": "number"
                 },
-                "maxBarSize": {
-                    "description": "Default max range for bar size scale.\n\nIf undefined (default), we will use bandSize - 1.",
-                    "minimum": 1,
-                    "type": "number"
-                },
-                "maxPointSize": {
-                    "description": "Default max range for point size scale.",
-                    "minimum": 1,
-                    "type": "number"
-                },
-                "maxRuleSize": {
-                    "description": "Default max range for rule size (strokeWidth) scale.",
-                    "minimum": 1,
-                    "type": "number"
-                },
-                "maxTextSize": {
-                    "description": "Default max range for text size (fontSize) scale.",
-                    "minimum": 1,
-                    "type": "number"
-                },
-                "maxTickSize": {
-                    "description": "Default max range for tick size (tick span) scale.\n\nIf undefined (default), we will use bandSize - 1.",
-                    "minimum": 1,
-                    "type": "number"
-                },
-                "minBarSize": {
-                    "description": "Default minimum range for bar size scale with zero=false.",
-                    "minimum": 1,
-                    "type": "number"
-                },
-                "minPointSize": {
-                    "description": "Default minimum range for point size scale with zero=false.",
-                    "minimum": 1,
-                    "type": "number"
-                },
-                "minRuleSize": {
-                    "description": "Default minimum range for rule size (strokeWidth) scale with zero=false.",
-                    "minimum": 1,
-                    "type": "number"
-                },
-                "minTextSize": {
-                    "description": "Default minimum range for text size (fontSize) scale with zero=false.",
-                    "minimum": 1,
-                    "type": "number"
-                },
-                "minTickSize": {
-                    "description": "Default minimum range for tick size (tick span) scale with zero=false.",
-                    "minimum": 1,
-                    "type": "number"
-                },
                 "nominalColorScheme": {
                     "description": "Default color scheme for nominal (categorical) data",
                     "type": "string"
                 },
-                "opacity": {
+                "opacityRange": {
                     "description": "Default range for opacity.",
                     "items": {
                         "type": "number"
@@ -2370,13 +2432,6 @@
                 "sequentialColorScheme": {
                     "description": "Default color scheme for ordinal, quantitative and temporal field",
                     "type": "string"
-                },
-                "shapeRange": {
-                    "description": "Default range for shape",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
                 },
                 "textBandWidth": {
                     "description": "Default band width for `x` ordinal scale when is mark is `text`.",
@@ -2535,6 +2590,26 @@
                     "$ref": "#/definitions/Interpolate",
                     "description": "The line interpolation method to use for line and area marks. One of the following:\n\n- `\"linear\"`: piecewise linear segments, as in a polyline.\n\n- `\"linear-closed\"`: close the linear segments to form a polygon.\n\n- `\"step\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"step-before\"`: alternate between vertical and horizontal segments, as in a step function.\n\n- `\"step-after\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"basis\"`: a B-spline, with control point duplication on the ends.\n\n- `\"basis-open\"`: an open B-spline; may not intersect the start or end.\n\n- `\"basis-closed\"`: a closed B-spline, as in a loop.\n\n- `\"cardinal\"`: a Cardinal spline, with control point duplication on the ends.\n\n- `\"cardinal-open\"`: an open Cardinal spline; may not intersect the start or end, but will intersect other control points.\n\n- `\"cardinal-closed\"`: a closed Cardinal spline, as in a loop.\n\n- `\"bundle\"`: equivalent to basis, except the tension parameter is used to straighten the spline.\n\n- `\"monotone\"`: cubic interpolation that preserves monotonicity in y."
                 },
+                "maxFontSize": {
+                    "description": "The default max value for mapping quantitative fields to text's size/fontSize.\n\nIf undefined (default), we will use bandSize - 1.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "maxStrokeWidth": {
+                    "description": "Default max strokeWidth for strokeWidth  (or rule/line's size) scale.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "minFontSize": {
+                    "description": "The default min value for mapping quantitative fields to tick's size/fontSize scale with zero=false",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "minStrokeWidth": {
+                    "description": "Default minimum strokeWidth for strokeWidth (or rule/line's size) scale with zero=false.",
+                    "minimum": 0,
+                    "type": "number"
+                },
                 "opacity": {
                     "maximum": 1,
                     "minimum": 0,
@@ -2624,6 +2699,26 @@
                 "interpolate": {
                     "$ref": "#/definitions/Interpolate",
                     "description": "The line interpolation method to use for line and area marks. One of the following:\n\n- `\"linear\"`: piecewise linear segments, as in a polyline.\n\n- `\"linear-closed\"`: close the linear segments to form a polygon.\n\n- `\"step\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"step-before\"`: alternate between vertical and horizontal segments, as in a step function.\n\n- `\"step-after\"`: alternate between horizontal and vertical segments, as in a step function.\n\n- `\"basis\"`: a B-spline, with control point duplication on the ends.\n\n- `\"basis-open\"`: an open B-spline; may not intersect the start or end.\n\n- `\"basis-closed\"`: a closed B-spline, as in a loop.\n\n- `\"cardinal\"`: a Cardinal spline, with control point duplication on the ends.\n\n- `\"cardinal-open\"`: an open Cardinal spline; may not intersect the start or end, but will intersect other control points.\n\n- `\"cardinal-closed\"`: a closed Cardinal spline, as in a loop.\n\n- `\"bundle\"`: equivalent to basis, except the tension parameter is used to straighten the spline.\n\n- `\"monotone\"`: cubic interpolation that preserves monotonicity in y."
+                },
+                "maxBandSize": {
+                    "description": "The default max value for mapping quantitative fields to tick's size/bandSize.\n\nIf undefined (default), we will use bandSize - 1.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "maxStrokeWidth": {
+                    "description": "Default max strokeWidth for strokeWidth  (or rule/line's size) scale.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "minBandSize": {
+                    "description": "The default min value for mapping quantitative fields to tick's size/bandSize scale with zero=false\n\nIf undefined (default), we will use the `continuousBandSize` value.",
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "minStrokeWidth": {
+                    "description": "Default minimum strokeWidth for strokeWidth (or rule/line's size) scale with zero=false.",
+                    "minimum": 0,
+                    "type": "number"
                 },
                 "opacity": {
                     "maximum": 1,

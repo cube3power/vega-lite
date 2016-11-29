@@ -664,7 +664,7 @@ export function rangeMixins(scale: Scale, model: Model, channel: Channel):
       const rangeMax = sizeRangeMax(mark, model, config);
       return {range: [rangeMin, rangeMax]};
     case SHAPE:
-      return {range: scaleConfig.shapeRange};
+      return {range: config.point.shapes};
     case COLOR:
       if (fieldDef.type === NOMINAL) {
         return {scheme: scaleConfig.nominalColorScheme};
@@ -673,30 +673,31 @@ export function rangeMixins(scale: Scale, model: Model, channel: Channel):
       return {scheme: scaleConfig.sequentialColorScheme};
 
     case OPACITY:
-      return {range: scaleConfig.opacity};
+      return {range: scaleConfig.opacityRange};
   }
   /* istanbul ignore next: should never reach here */
   throw new Error(`Scale range undefined for channel ${channel}`);
 }
 
 function sizeRangeMin(mark: Mark, zero: boolean, config: Config) {
-  const scaleConfig = config.scale;
   if (zero) {
     return 0;
   }
   switch (mark) {
     case 'bar':
-      return scaleConfig.minBarSize !== undefined ? scaleConfig.minBarSize : config.bar.continuousBandSize;
+      return config.bar.minBandSize !== undefined ? config.bar.minBandSize : config.bar.continuousBandSize;
     case 'tick':
-      return scaleConfig.minTickSize;
+      return config.tick.minBandSize;
     case 'rule':
-      return scaleConfig.minRuleSize;
+      return config.rule.minStrokeWidth;
     case 'text':
-      return scaleConfig.minTextSize;
+      return config.text.minFontSize;
     case 'point':
+      return config.point.minSize;
     case 'square':
+      return config.square.minSize;
     case 'circle':
-      return scaleConfig.minPointSize;
+      return config.circle.minSize;
   }
   /* istanbul ignore next: should never reach here */
   // sizeRangeMin not implemented for the mark
@@ -708,19 +709,19 @@ function sizeRangeMax(mark: Mark, model: Model,  config: Config) {
   // TODO(#1168): make max size scale based on bandSize / overall plot size
   switch (mark) {
     case 'bar':
-      if (scaleConfig.maxBarSize !== undefined) {
-        return scaleConfig.maxBarSize;
+      if (config.bar.maxBandSize !== undefined) {
+        return config.bar.maxBandSize;
       }
       return barTickBandSize(model, config.mark) - 1;
     case 'tick':
-      if (scaleConfig.maxTickSize !== undefined) {
-        return scaleConfig.maxTickSize;
+      if (config.tick.maxBandSize !== undefined) {
+        return config.tick.maxBandSize;
       }
       return barTickBandSize(model, config.mark) - 1;
     case 'rule':
-      return scaleConfig.maxRuleSize;
+      return config.rule.maxStrokeWidth;
     case 'text':
-      return scaleConfig.maxTextSize;
+      return config.text.maxFontSize;
     case 'point':
     case 'square':
     case 'circle':

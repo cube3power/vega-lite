@@ -10,6 +10,7 @@ import * as log from '../../src/log';
 import {X, Y, SHAPE, DETAIL, ROW, COLUMN, Channel} from '../../src/channel';
 import {BANDSIZE_FIT, ScaleType, defaultScaleConfig} from '../../src/scale';
 import {POINT, RECT, BAR, TEXT} from '../../src/mark';
+import * as mark from '../../src/mark';
 import {TimeUnit} from '../../src/timeunit';
 import {TEMPORAL, ORDINAL} from '../../src/type';
 
@@ -669,9 +670,9 @@ describe('Scale', function() {
               "size": {"field": "Origin", "type": "ordinal"}
             },
             config: {
-              scale: {
-                minBarSize: 2,
-                maxBarSize: 9
+              bar: {
+                minBandSize: 2,
+                maxBandSize: 9
               }
             }
           });
@@ -705,9 +706,9 @@ describe('Scale', function() {
               "size": {"field": "Origin", "type": "ordinal"}
             },
             config: {
-              scale: {
-                minTickSize: 4,
-                maxTickSize: 9
+              tick: {
+                minBandSize: 4,
+                maxBandSize: 9
               }
             }
           });
@@ -742,7 +743,7 @@ describe('Scale', function() {
             }
           });
           const scales = parseScaleComponent(model)['size'];
-          assert.deepEqual(scales.main.range, [defaultScaleConfig.minTextSize, defaultScaleConfig.maxTextSize]);
+          assert.deepEqual(scales.main.range, [mark.defaultTextConfig.minFontSize, mark.defaultTextConfig.maxFontSize]);
         });
       });
 
@@ -758,7 +759,7 @@ describe('Scale', function() {
             }
           });
           const scales = parseScaleComponent(model)['size'];
-          assert.deepEqual(scales.main.range, [defaultScaleConfig.minRuleSize, defaultScaleConfig.maxRuleSize]);
+          assert.deepEqual(scales.main.range, [mark.defaultRuleConfig.minStrokeWidth, mark.defaultRuleConfig.maxStrokeWidth]);
         });
       });
 
